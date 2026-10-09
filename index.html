@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="카피바라 코딩의 모바일·PC 게임 개발, 코딩 YouTube 콘텐츠와 문의 안내입니다.">
+  <meta name="theme-color" content="#125e55">
+  <title>copybaracoding | 게임 개발과 코딩 콘텐츠</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23125e55'/%3E%3Cpath d='M22 10H14a6 6 0 000 12h8' fill='none' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #ffffff;
+      --ink: #18322e;
+      --muted: #52645f;
+      --green: #125e55;
+      --pale: #edf5f0;
+      --yellow: #f5cd65;
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      font-synthesis: none;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-size: 16px; line-height: 1.8; word-break: keep-all; }
+    a { color: inherit; text-underline-offset: 5px; }
+    a:focus-visible { outline: 3px solid var(--green); outline-offset: 6px; }
+    .wrap { width: min(1080px, calc(100% - 64px)); margin-inline: auto; }
+    .skip { position: absolute; top: -100px; left: 20px; padding: 8px 16px; background: white; z-index: 3; }
+    .skip:focus { top: 12px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 26px; }
+    .brand { display: inline-flex; gap: 12px; align-items: center; text-decoration: none; font-weight: 800; letter-spacing: -.6px; font-size: 21px; }
+    .brand-mark { width: 34px; height: 34px; border-radius: 10px; background: var(--green); color: white; display: grid; place-items: center; font-size: 23px; line-height: 1; }
+    nav { display: flex; gap: 26px; font-size: 15px; }
+    nav a { text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .hero { position: relative; overflow: hidden; background: var(--pale); border-radius: 8px 8px 64px 8px; padding: 70px 64px; }
+    .hero-content { position: relative; z-index: 1; max-width: 630px; }
+    h1 { margin: 0 0 26px; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.42; letter-spacing: -2px; font-weight: 800; }
+    .intro { margin: 0; max-width: 440px; color: var(--muted); font-size: 17px; }
+    .hero-decoration { position: absolute; right: -30px; bottom: -48px; width: 260px; height: 260px; border: 48px solid var(--yellow); border-radius: 50%; transform: rotate(-18deg); }
+    .hero-decoration::after { content: ""; position: absolute; width: 72px; height: 72px; background: var(--green); border: 14px solid var(--pale); border-radius: 24px; left: -78px; top: -56px; }
+    section { scroll-margin-top: 24px; }
+    .section-row { display: grid; grid-template-columns: 190px 1fr; gap: 44px; padding-block: 46px; }
+    .section-row + .section-row { border-top: 1px solid #dce6e1; }
+    h2 { font-size: 23px; letter-spacing: -.8px; line-height: 1.5; margin: 0; }
+    h3 { font-size: 21px; letter-spacing: -.5px; line-height: 1.5; margin: 0 0 12px; }
+    p { margin: 0; }
+    .project-title { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+    .project-title h3 { margin: 0; }
+    .status { font-size: 14px; font-weight: 700; color: var(--green); background: var(--pale); padding: 3px 12px; border-radius: 20px; white-space: nowrap; }
+    .body-copy { max-width: 630px; color: var(--muted); }
+    .note { margin-top: 12px; color: var(--muted); font-size: 14px; }
+    .email { display: inline-block; margin-top: 14px; font-size: clamp(17px, 2.4vw, 23px); font-weight: 700; color: var(--green); overflow-wrap: anywhere; word-break: normal; }
+    footer { border-top: 1px solid #dce6e1; padding-block: 24px 32px; color: var(--muted); font-size: 14px; }
+    @media (max-width: 640px) {
+      .wrap { width: calc(100% - 40px); }
+      header { flex-wrap: wrap; gap: 14px; padding-block: 20px; }
+      .brand { font-size: 19px; }
+      nav { gap: 20px; }
+      .hero { padding: 38px 24px 72px; border-bottom-right-radius: 48px; }
+      h1 { letter-spacing: -1.4px; }
+      .intro { font-size: 16px; max-width: 310px; }
+      .hero-decoration { width: 155px; height: 155px; border-width: 28px; right: -38px; bottom: -67px; }
+      .hero-decoration::after { width: 45px; height: 45px; border-width: 9px; border-radius: 16px; left: -48px; top: -38px; }
+      .section-row { grid-template-columns: 1fr; gap: 18px; padding-block: 32px; }
+      h2 { font-size: 21px; }
+      h3 { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 이동</a>
+  <header class="wrap">
+    <a class="brand" href="#main" aria-label="copybaracoding 홈">
+      <span class="brand-mark" aria-hidden="true">c</span>copybaracoding
+    </a>
+    <nav aria-label="주요 메뉴">
+      <a href="#game">개발 중인 게임</a>
+      <a href="#support">문의</a>
+    </nav>
+  </header>
+  <main id="main" class="wrap">
+    <div class="hero">
+      <div class="hero-content">
+        <h1>게임을 만들고,<br>코딩 경험을 나눕니다.</h1>
+        <p class="intro">카피바라 코딩은 모바일·PC 게임 개발과 코딩 콘텐츠를 준비하는 1인 사업자입니다. copybaracoding이라는 이름으로 활동합니다.</p>
+      </div>
+      <div class="hero-decoration" aria-hidden="true"></div>
+    </div>
+    <section id="game" class="section-row" aria-labelledby="game-heading">
+      <h2 id="game-heading">개발 중인 게임</h2>
+      <div>
+        <div class="project-title">
+          <h3>동물 먹이 주기 게임</h3>
+          <span class="status">개발 중</span>
+        </div>
+        <p class="body-copy">동물이 좋아하는 먹이를 기억하고, 떨어지는 먹이를 받아 보세요. 여러 동물을 만나며 순발력과 기억력을 함께 사용하는 Android 게임을 준비하고 있습니다.</p>
+        <p class="note">정식 게임 이름과 출시 일정은 추후 안내합니다.</p>
+      </div>
+    </section>
+    <section class="section-row" aria-labelledby="coding-heading">
+      <h2 id="coding-heading">코딩 콘텐츠</h2>
+      <div>
+        <p class="body-copy">게임을 만드는 과정과 코딩 학습 경험을 YouTube 콘텐츠로 나눌 예정입니다. 처음 배우는 사람도 따라갈 수 있도록 실제 개발 과정을 쉽게 전하겠습니다.</p>
+      </div>
+    </section>
+    <section id="support" class="section-row" aria-labelledby="support-heading">
+      <h2 id="support-heading">문의</h2>
+      <div>
+        <p class="body-copy">게임과 코딩 콘텐츠 관련 질문, 이용 중 불편한 점은 이메일로 보내 주세요.</p>
+        <a class="email" href="mailto:copybaracoding@gmail.com">copybaracoding@gmail.com</a>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap">상호: 카피바라 코딩<br>© 2026 copybaracoding</footer>
+</body>
+</html>
