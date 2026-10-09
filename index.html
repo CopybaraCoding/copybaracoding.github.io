@@ -48,6 +48,11 @@
     p { margin: 0; }
     .project-title { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
     .project-title h3 { margin: 0; }
+    .game-entry + .game-entry { margin-top: 32px; padding-top: 32px; border-top: 1px solid #dce6e1; }
+    .game-details { margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 6px 28px; font-size: 14px; color: var(--muted); }
+    .game-details div { display: flex; flex-wrap: wrap; gap: 6px; }
+    .game-details dt { font-weight: 700; }
+    .game-details dd { margin: 0; }
     .status { font-size: 14px; font-weight: 700; color: var(--green); background: var(--pale); padding: 3px 12px; border-radius: 20px; white-space: nowrap; }
     .body-copy { max-width: 630px; color: var(--muted); }
     .note { margin-top: 12px; color: var(--muted); font-size: 14px; }
@@ -91,12 +96,30 @@
     <section id="game" class="section-row" aria-labelledby="game-heading">
       <h2 id="game-heading">개발 중인 게임</h2>
       <div>
-        <div class="project-title">
-          <h3>동물 먹이 주기 게임</h3>
-          <span class="status">개발 중</span>
-        </div>
-        <p class="body-copy">동물이 좋아하는 먹이를 기억하고, 떨어지는 먹이를 받아 보세요. 여러 동물을 만나며 순발력과 기억력을 함께 사용하는 Android 게임을 준비하고 있습니다.</p>
-        <p class="note">정식 게임 이름과 출시 일정은 추후 안내합니다.</p>
+        <article class="game-entry" aria-labelledby="feeding-title">
+          <div class="project-title">
+            <h3 id="feeding-title">동물 먹이 주기 게임</h3>
+            <span class="status">개발 중</span>
+          </div>
+          <p class="body-copy">동물이 좋아하는 먹이를 기억하고, 떨어지는 먹이를 받아 보세요. 여러 동물을 만나며 순발력과 기억력을 함께 사용하는 모바일 게임을 준비하고 있습니다.</p>
+          <dl class="game-details">
+            <div><dt>출시 예정</dt><dd>Google Play · App Store(iOS)</dd></div>
+            <div><dt>개발 엔진</dt><dd>Unity</dd></div>
+          </dl>
+          <p class="note">정식 게임 이름과 출시 일정은 추후 안내합니다.</p>
+        </article>
+        <article class="game-entry" aria-labelledby="rescue-title">
+          <div class="project-title">
+            <h3 id="rescue-title">카피바라 구조대</h3>
+            <span class="status">개발 중</span>
+          </div>
+          <p class="body-copy">카피바라가 여러 지역에서 길을 잃은 동물들을 만나, 먹이로 친해지고 쉼터까지 함께 돌아오는 편안한 싱글 플레이 구조 모험 게임입니다.</p>
+          <dl class="game-details">
+            <div><dt>출시 예정</dt><dd>PC · Steam</dd></div>
+            <div><dt>개발 엔진</dt><dd>Unreal Engine 5</dd></div>
+          </dl>
+          <p class="note">영문 이름: Capybara Rescue Team. 출시 일정은 추후 안내합니다.</p>
+        </article>
       </div>
     </section>
     <section class="section-row" aria-labelledby="coding-heading">
