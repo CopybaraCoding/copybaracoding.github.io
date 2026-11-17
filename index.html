@@ -50,6 +50,10 @@
     .project-title { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
     .project-title h3 { margin: 0; }
     .game-entry + .game-entry { margin-top: 32px; padding-top: 32px; border-top: 1px solid #dce6e1; }
+    .game-link { display: inline-block; margin-top: 16px; padding: 8px 16px; border-radius: 8px; background: var(--green); color: white; font-weight: 700; text-decoration: none; }
+    .game-link:hover { text-decoration: underline; }
+    .game-preview { margin: 20px 0 0; }
+    .game-preview img { display: block; width: 100%; height: auto; border: 1px solid #dce6e1; border-radius: 8px; }
     .game-details { margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 6px 28px; font-size: 14px; color: var(--muted); }
     .game-details div { display: flex; flex-wrap: wrap; gap: 6px; }
     .game-details dt { font-weight: 700; }
@@ -97,6 +101,18 @@
     <section id="game" class="section-row" aria-labelledby="game-heading">
       <h2 id="game-heading">개발 중인 게임</h2>
       <div>
+        <article class="game-entry" aria-labelledby="glory-atlas-title">
+          <div class="project-title">
+            <h3 id="glory-atlas-title">Glory Atlas</h3>
+            <span class="status">웹 공개</span>
+          </div>
+          <p class="body-copy">인물과 사건에 관한 단서를 읽고 지도에서 그 장소를 찾아보는 무료 웹게임입니다. 하루 두 문제를 풀고 정답 장소에 얽힌 이야기를 읽을 수 있습니다.</p>
+          <a class="game-link" href="https://glory-atlas.com/">Glory Atlas 플레이하기</a>
+          <figure class="game-preview">
+            <img src="images/glory-atlas-home.png" width="1360" height="880" alt="프리다 칼로가 표지에 나온 Glory Atlas 첫 화면" loading="lazy" decoding="async">
+            <figcaption class="note">표지 사진 <a href="https://commons.wikimedia.org/wiki/File:Frida_Kahlo%2C_by_Guillermo_Kahlo.jpg">Guillermo Kahlo, Wikimedia Commons</a></figcaption>
+          </figure>
+        </article>
         <article class="game-entry" aria-labelledby="feeding-title">
           <div class="project-title">
             <h3 id="feeding-title">동물 먹이 주기 게임</h3>
